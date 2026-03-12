@@ -33,7 +33,7 @@ I enjoy building clean, scalable, and user-friendly web applications and continu
 
 ## 🌍 Live Website
 
-Coming Soon...
+https://shivanshgiriportfolio.netlify.app/
 
 ## 📫 Contact
 
