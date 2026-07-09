@@ -6,6 +6,7 @@ import { Footer } from "@/components/main/footer";
 import { Navbar } from "@/components/main/navbar";
 import { StarsCanvas } from "@/components/main/star-background";
 import { siteConfig } from "@/config";
+import { Analytics } from '@vercel/analytics/react';
 import { cn } from "@/lib/utils";
 
 import "./globals.css";
@@ -19,6 +20,18 @@ export const viewport: Viewport = {
 export const metadata: Metadata = siteConfig;
 
 export default function RootLayout({ children }: PropsWithChildren) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Shivansh Giri',
+    url: 'https://shivanshgiri.vercel.app',
+    jobTitle: 'Full Stack Developer',
+    sameAs: [
+      'https://github.com/ShivanshGiri',
+      // Add other social links here
+    ],
+  };
+
   return (
     <html lang="en">
       <body
@@ -27,10 +40,15 @@ export default function RootLayout({ children }: PropsWithChildren) {
           inter.className
         )}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <StarsCanvas />
         <Navbar />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

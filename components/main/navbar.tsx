@@ -9,28 +9,23 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-10">
+    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-2 md:px-10 mt-2 md:mt-0">
       {/* Navbar Container */}
-      <div className="w-full h-full flex items-center justify-between m-auto px-[10px]">
+      <div className="w-full h-full flex items-center justify-center md:justify-between m-auto px-[10px]">
         {/* Logo + Name */}
         <Link
           href="#about-me"
-          className="flex items-center"
+          className="hidden md:flex items-center gap-2"
         >
-          <Image
-            src="/logo-v2.png"
-            alt="Logo"
-            width={45}
-            height={45}
-            draggable={false}
-            className="cursor-pointer"
-          />
-          <div className="hidden md:flex md:selffont-bold ml-[10px] text-gray-300">Shivansh Giri</div>
+          <span className="font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            &lt;SG /&gt;
+          </span>
+          <div className="hidden md:flex font-bold ml-[10px] text-gray-300">Shivansh Giri</div>
         </Link>
 
         {/* Web Navbar */}
-        <div className="hidden md:flex w-[500px] h-full flex-row items-center justify-between md:mr-20">
-          <div className="flex items-center justify-between w-full h-auto border-[rgba(112,66,248,0.38)] bg-[rgba(3,0,20,0.37)] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
+        <div className="flex w-full md:w-[500px] h-full flex-row items-center justify-center md:justify-between md:mr-20">
+          <div className="flex items-center justify-between w-full max-w-[400px] md:max-w-none h-auto border-[rgba(112,66,248,0.38)] bg-[rgba(3,0,20,0.37)] md:mr-[15px] px-[15px] md:px-[20px] py-[10px] rounded-full text-gray-200 text-sm md:text-base gap-2 md:gap-0">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.title}
@@ -61,6 +56,7 @@ export const Navbar = () => {
               target="_blank"
               rel="noreferrer noopener"
               key={name}
+              aria-label={name}
             >
               <Icon className="h-6 w-6 text-white" />
             </Link>
@@ -69,7 +65,7 @@ export const Navbar = () => {
 
         {/* Hamburger Menu */}
         <button
-          className="md:hidden text-white focus:outline-none text-4xl"
+          className="hidden text-white focus:outline-none text-4xl"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           ☰
@@ -110,6 +106,7 @@ export const Navbar = () => {
                 target="_blank"
                 rel="noreferrer noopener"
                 key={name}
+                aria-label={name}
               >
                 <Icon className="h-8 w-8 text-white" />
               </Link>

@@ -19,35 +19,35 @@ export const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-row items-center justify-center px-20 mt-40 w-full z-[20]"
+      className="flex flex-col md:flex-row items-center justify-center px-5 md:px-20 mt-24 md:mt-40 w-full z-[20]"
     >
-      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
+      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-center md:text-start items-center md:items-start">
         <motion.div
           variants={slideInFromTop}
-          className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]]"
+          className="Welcome-box py-[8px] px-[12px] border border-[#7042f88b] opacity-[0.9] bg-[#030014]/60"
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-          <h1 className="Welcome-text text-[13px]">
+          <h2 className="Welcome-text text-[13px]">
             Aspiring Software Engineer
-          </h1>
+          </h2>
         </motion.div>
 
-        <motion.div
+        <motion.h1
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-6 mt-6 text-6xl text-bold text-white max-w-[600px] w-auto h-auto"
+          className="flex flex-col gap-6 mt-6 text-4xl md:text-6xl font-bold text-white max-w-[600px] w-auto h-auto drop-shadow-[0_2px_10px_rgba(0,0,0,1)]"
         >
           <span>
             Full Stack Developer,{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 drop-shadow-[0_2px_10px_rgba(0,0,0,1)]">
               C++ & DSA
             </span>{" "}
             Enthusiast.
           </span>
-        </motion.div>
+        </motion.h1>
 
         <motion.p
           variants={slideInFromLeft(0.8)}
-          className="text-lg text-gray-400 my-5 max-w-[600px]"
+          className="text-base md:text-lg text-gray-400 my-5 max-w-[600px] drop-shadow-[0_2px_10px_rgba(0,0,0,1)]"
         >
           I am a Computer Science & Data Analytics student at IIT Patna. I am passionate about building modern web applications, solving complex problems using Data Structures & Algorithms, and exploring Artificial Intelligence.
         </motion.p>
@@ -55,7 +55,7 @@ export const HeroContent = () => {
         <motion.a
           variants={slideInFromLeft(1)}
           onClick={() => setIsModalOpen(true)}
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+          className="py-3 px-8 button-primary text-center text-white cursor-pointer rounded-lg text-lg font-semibold w-full max-w-[250px]"
         >
           Learn more
         </motion.a>
