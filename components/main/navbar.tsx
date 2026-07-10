@@ -25,12 +25,12 @@ export const Navbar = () => {
 
         {/* Web Navbar */}
         <div className="flex w-full md:w-[500px] h-full flex-row items-center justify-center md:justify-between md:mr-20">
-          <div className="flex items-center justify-between w-full max-w-[400px] md:max-w-none h-auto border-[rgba(112,66,248,0.38)] bg-[rgba(3,0,20,0.37)] md:mr-[15px] px-[15px] md:px-[20px] py-[10px] rounded-full text-gray-200 text-sm md:text-base gap-2 md:gap-0">
+          <div className="flex items-center justify-between w-full max-w-[400px] md:max-w-none h-auto border-[rgba(112,66,248,0.38)] bg-[rgba(3,0,20,0.37)] md:mr-[15px] px-[10px] sm:px-[15px] md:px-[20px] py-[8px] md:py-[10px] rounded-full text-gray-200 text-[11px] sm:text-sm md:text-base gap-2 md:gap-0">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.title}
                 href={link.link}
-                className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
+                className="cursor-pointer hover:text-[rgb(112,66,248)] transition whitespace-nowrap"
               >
                 {link.title}
               </Link>
@@ -41,7 +41,7 @@ export const Navbar = () => {
               href={LINKS.sourceCode}
               target="_blank"
               rel="noreferrer noopener"
-              className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
+              className="cursor-pointer hover:text-[rgb(112,66,248)] transition whitespace-nowrap"
             >
               Source Code
             </Link>
