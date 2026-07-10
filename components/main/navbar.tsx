@@ -9,13 +9,13 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-2 md:px-10 mt-2 md:mt-0">
+    <div className="hidden md:block w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-2 md:px-10 mt-2 md:mt-0">
       {/* Navbar Container */}
-      <div className="w-full h-full flex items-center justify-center md:justify-between m-auto px-[10px]">
+      <div className="w-full h-full flex items-center justify-between m-auto px-[10px]">
         {/* Logo + Name */}
         <Link
           href="#about-me"
-          className="hidden md:flex items-center gap-2"
+          className="flex items-center gap-2"
         >
           <span className="font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
             &lt;SG /&gt;
@@ -24,8 +24,8 @@ export const Navbar = () => {
         </Link>
 
         {/* Web Navbar */}
-        <div className="flex w-full md:w-[500px] h-full flex-row items-center justify-center md:justify-between md:mr-20">
-          <div className="flex items-center justify-between w-full max-w-[400px] md:max-w-none h-auto border-[rgba(112,66,248,0.38)] bg-[rgba(3,0,20,0.37)] md:mr-[15px] px-[10px] sm:px-[15px] md:px-[20px] py-[8px] md:py-[10px] rounded-full text-gray-200 text-[11px] sm:text-sm md:text-base gap-2 md:gap-0">
+        <div className="hidden md:flex w-[500px] h-full flex-row items-center justify-between mr-20">
+          <div className="flex items-center justify-between w-full h-auto border-[rgba(112,66,248,0.38)] bg-[rgba(3,0,20,0.37)] px-[20px] py-[10px] rounded-full text-gray-200 text-base">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.title}
@@ -65,7 +65,7 @@ export const Navbar = () => {
 
         {/* Hamburger Menu */}
         <button
-          className="hidden text-white focus:outline-none text-4xl"
+          className="md:hidden text-white focus:outline-none text-3xl"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           ☰
